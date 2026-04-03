@@ -131,6 +131,39 @@ header{text-align:center;padding:1.2rem 1rem 1.5rem;width:100%;background:linear
 .act-btn-ghost{background:transparent;border:1px solid rgba(192,132,252,.3);color:rgba(192,132,252,.7);padding:.85rem 2rem;border-radius:99px;font-family:'Noto Serif KR',serif;font-size:.88rem;cursor:pointer;transition:all .3s;}
 .act-btn-ghost:hover{border-color:#c084fc;color:#c084fc;}
 @media(max-width:480px){:root{--card-w:110px;--card-h:190px;}.cards-area{gap:1rem;}}
+
+/* ── 하단 고정 배너 ── */
+.bottom-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:linear-gradient(135deg,rgba(15,10,30,.97),rgba(45,27,105,.97));
+  border-top:1px solid rgba(192,132,252,.25);
+  padding:.75rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;
+  backdrop-filter:blur(12px);
+}
+.banner-text{
+  font-size:.82rem;color:rgba(220,200,240,.8);
+  font-family:'Noto Serif KR',serif;line-height:1.5;
+}
+.banner-text strong{color:#f0c060;}
+.banner-yt-btn{
+  display:flex;align-items:center;gap:.5rem;
+  text-decoration:none;flex-shrink:0;
+  background:linear-gradient(135deg,#FF0000,#cc0000);
+  color:#fff;padding:.5rem 1.1rem;border-radius:99px;
+  font-family:'Noto Serif KR',serif;font-size:.82rem;font-weight:600;
+  transition:all .3s;white-space:nowrap;
+  box-shadow:0 2px 12px rgba(255,0,0,.3);
+}
+.banner-yt-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,0,0,.4);}
+.banner-close{
+  background:none;border:none;color:rgba(200,170,240,.35);
+  cursor:pointer;font-size:1.1rem;padding:.2rem .4rem;
+  transition:color .2s;flex-shrink:0;
+}
+.banner-close:hover{color:rgba(200,170,240,.8);}
+#app{padding-bottom:5rem;}
 </style>
 </head>
 <body>
@@ -372,5 +405,20 @@ function doReading(){
   },drawn.length*350+1200);
 }
 </script>
+
+<div class="bottom-banner" id="bottom-banner">
+  <div class="banner-text">
+    💕 <strong>마음코드</strong> — 연애심리학 유튜브 채널에서<br>
+    더 깊은 사랑 이야기를 만나보세요!
+  </div>
+  <a class="banner-yt-btn" href="https://www.youtube.com/@mindcode_k" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M19.6 7.8a2 2 0 0 0-1.4-1.4C16.8 6 12 6 12 6s-4.8 0-6.2.4A2 2 0 0 0 4.4 7.8C4 9.2 4 12 4 12s0 2.8.4 4.2a2 2 0 0 0 1.4 1.4C7.2 18 12 18 12 18s4.8 0 6.2-.4a2 2 0 0 0 1.4-1.4C20 14.8 20 12 20 12s0-2.8-.4-4.2Z" fill="white"/>
+      <path d="M10 15l5-3-5-3v6Z" fill="#FF0000"/>
+    </svg>
+    구독하러 가기
+  </a>
+  <button class="banner-close" onclick="document.getElementById('bottom-banner').style.display='none'" title="닫기">✕</button>
+</div>
 </body>
 </html>
