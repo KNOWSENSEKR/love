@@ -278,17 +278,10 @@ header{
 .c-front{
   transform:rotateY(180deg);
   display:flex;flex-direction:column;
+  background:#1a0f35;
 }
 .c-art{
-  flex:1;display:flex;align-items:center;justify-content:center;
-  font-size:3.5rem;position:relative;overflow:hidden;
-}
-.c-art-bg{position:absolute;inset:0;opacity:.15;}
-.c-emoji{position:relative;z-index:1;filter:drop-shadow(0 0 12px rgba(240,192,96,.5));}
-.c-numeral{
-  position:absolute;top:6px;left:0;right:0;text-align:center;
-  font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;
-  color:rgba(255,255,255,.4);
+  flex:1;position:relative;overflow:hidden;padding:0;
 }
 .c-plate{
   background:rgba(0,0,0,.55);padding:.4rem .5rem;text-align:center;
@@ -495,114 +488,93 @@ header{
 })();
 
 // ── Cards Data ──
+const IMG_BASE = 'https://knowsensekr.github.io/love/';
 const CARDS = [
-  {id:0,numeral:'0',name:'The Fool',ko:'바보',emoji:'🌟',
-   bg:'linear-gradient(145deg,#0c4a6e,#075985)',
+  {id:0,numeral:'0',name:'The Fool',ko:'바보',img:`${IMG_BASE}1.png`,
    kw:['자유','새 시작','순수','모험'],
    love:'새로운 사랑의 시작을 알립니다. 두려움 없이 마음을 열어보세요. 예상치 못한 곳에서 설레는 만남이 찾아올 수 있습니다.',
    reversed_love:'관계에서 너무 충동적으로 행동하거나 준비 없이 뛰어들고 있지 않은지 점검하세요.'},
-  {id:1,numeral:'I',name:'The Magician',ko:'마법사',emoji:'⚡',
-   bg:'linear-gradient(145deg,#4a044e,#701a75)',
+  {id:1,numeral:'I',name:'The Magician',ko:'마법사',img:`${IMG_BASE}2.png`,
    kw:['매력','표현','창조','적극성'],
    love:'당신의 매력이 빛나는 시기입니다. 마음을 표현하세요. 행동으로 보여주는 사랑이 관계를 발전시킵니다.',
    reversed_love:'상대방을 조종하거나 진실하지 못한 접근을 경계하세요.'},
-  {id:2,numeral:'II',name:'High Priestess',ko:'여사제',emoji:'🌙',
-   bg:'linear-gradient(145deg,#1e1b4b,#312e81)',
+  {id:2,numeral:'II',name:'High Priestess',ko:'여사제',img:`${IMG_BASE}3.png`,
    kw:['직관','신비','인내','내면'],
    love:'서두르지 마세요. 직관을 믿고 기다리세요. 겉으로 드러나지 않은 깊은 감정이 있습니다.',
    reversed_love:'숨겨진 감정이나 비밀이 관계에 영향을 주고 있을 수 있습니다.'},
-  {id:3,numeral:'III',name:'The Empress',ko:'여제',emoji:'🌸',
-   bg:'linear-gradient(145deg,#14532d,#166534)',
+  {id:3,numeral:'III',name:'The Empress',ko:'여제',img:`${IMG_BASE}4.png`,
    kw:['풍요','사랑','온기','아름다움'],
    love:'사랑이 꽃피는 시기입니다. 관계가 풍요롭고 따뜻하게 성장합니다. 자신을 먼저 사랑하면 더 좋은 사랑이 옵니다.',
    reversed_love:'자기 자신을 소홀히 하거나 의존적인 관계 패턴을 주의하세요.'},
-  {id:4,numeral:'IV',name:'The Emperor',ko:'황제',emoji:'👑',
-   bg:'linear-gradient(145deg,#7c2d12,#9a3412)',
+  {id:4,numeral:'IV',name:'The Emperor',ko:'황제',img:`${IMG_BASE}5.png`,
    kw:['안정','보호','신뢰','책임'],
    love:'안정적이고 든든한 사랑을 나타냅니다. 상대방이 믿음직스럽거나, 관계에 안정이 필요한 시기입니다.',
    reversed_love:'지나친 통제나 고집이 관계를 경직시킬 수 있습니다.'},
-  {id:5,numeral:'V',name:'The Hierophant',ko:'교황',emoji:'🕊️',
-   bg:'linear-gradient(145deg,#1e3a5f,#1e40af)',
+  {id:5,numeral:'V',name:'The Hierophant',ko:'교황',img:`${IMG_BASE}6.png`,
    kw:['헌신','전통','약속','진지함'],
    love:'진지하고 헌신적인 관계를 암시합니다. 사회적으로 인정받는 관계로 발전할 가능성이 있습니다.',
    reversed_love:'관습에서 벗어난 새로운 관계 방식이 필요할 수 있습니다.'},
-  {id:6,numeral:'VI',name:'The Lovers',ko:'연인',emoji:'💕',
-   bg:'linear-gradient(145deg,#831843,#9d174d)',
+  {id:6,numeral:'VI',name:'The Lovers',ko:'연인',img:`${IMG_BASE}7.png`,
    kw:['사랑','선택','조화','깊은 유대'],
    love:'강렬한 끌림과 깊은 감정적 연결을 의미합니다. 중요한 선택의 시기이며, 진정한 사랑의 에너지가 흐릅니다.',
    reversed_love:'관계에서 불균형이나 가치관 충돌이 있을 수 있습니다. 솔직한 대화가 필요합니다.'},
-  {id:7,numeral:'VII',name:'The Chariot',ko:'전차',emoji:'🏆',
-   bg:'linear-gradient(145deg,#0f172a,#1e3a5f)',
+  {id:7,numeral:'VII',name:'The Chariot',ko:'전차',img:`${IMG_BASE}8.png`,
    kw:['용기','전진','의지','성취'],
    love:'원하는 사랑을 향해 적극적으로 나아가세요. 감정을 잘 다스리며 관계를 이끌어 나갈 수 있습니다.',
    reversed_love:'감정 기복이나 공격적인 태도가 관계를 방해할 수 있습니다.'},
-  {id:8,numeral:'VIII',name:'Strength',ko:'힘',emoji:'🦁',
-   bg:'linear-gradient(145deg,#451a03,#78350f)',
+  {id:8,numeral:'VIII',name:'Strength',ko:'힘',img:`${IMG_BASE}9.png`,
    kw:['인내','용기','온화함','내면의 힘'],
    love:'부드러움과 강인함으로 상대의 마음을 사로잡습니다. 인내와 이해로 관계를 지속하면 아름다운 결실이 있습니다.',
    reversed_love:'자기 의심이나 두려움이 사랑을 가로막고 있을 수 있습니다.'},
-  {id:9,numeral:'IX',name:'The Hermit',ko:'은둔자',emoji:'🕯️',
-   bg:'linear-gradient(145deg,#1c1917,#292524)',
+  {id:9,numeral:'IX',name:'The Hermit',ko:'은둔자',img:`${IMG_BASE}10.png`,
    kw:['성찰','지혜','홀로서기','내면 탐구'],
    love:'지금은 혼자만의 시간이 필요한 시기입니다. 자신을 더 잘 알게 될수록 더 건강한 사랑이 찾아옵니다.',
    reversed_love:'외로움이나 고립을 두려워하며 잘못된 관계에 매달리고 있지 않은지 살펴보세요.'},
-  {id:10,numeral:'X',name:'Wheel of Fortune',ko:'운명의 바퀴',emoji:'🎡',
-   bg:'linear-gradient(145deg,#14532d,#065f46)',
+  {id:10,numeral:'X',name:'Wheel of Fortune',ko:'운명의 바퀴',img:`${IMG_BASE}11.png`,
    kw:['운명','전환','행운','변화'],
    love:'사랑의 운명적 전환점이 찾아옵니다. 예상치 못한 만남이나 관계의 새로운 국면이 시작될 수 있습니다.',
    reversed_love:'변화에 저항하면 관계가 정체될 수 있습니다. 흐름을 받아들이세요.'},
-  {id:11,numeral:'XI',name:'Justice',ko:'정의',emoji:'⚖️',
-   bg:'linear-gradient(145deg,#1e3a5f,#1e40af)',
+  {id:11,numeral:'XI',name:'Justice',ko:'정의',img:`${IMG_BASE}12.png`,
    kw:['균형','공정','진실','인과'],
    love:'관계에서 균형과 공정이 중요합니다. 상대방에게 진솔하게 대하면 그만큼 돌아옵니다.',
    reversed_love:'한쪽이 더 많이 노력하고 있는 불균형한 관계를 점검해보세요.'},
-  {id:12,numeral:'XII',name:'The Hanged Man',ko:'매달린 남자',emoji:'🌀',
-   bg:'linear-gradient(145deg,#0c4a6e,#0e7490)',
+  {id:12,numeral:'XII',name:'The Hanged Man',ko:'매달린 남자',img:`${IMG_BASE}13.png`,
    kw:['기다림','희생','관점 전환','인내'],
    love:'사랑을 위해 기다림이 필요한 시기입니다. 관점을 바꾸면 상대방이 다르게 보일 수 있습니다.',
    reversed_love:'의미 없는 기다림은 그만하세요. 결단이 필요한 때입니다.'},
-  {id:13,numeral:'XIII',name:'Death',ko:'변환',emoji:'🦋',
-   bg:'linear-gradient(145deg,#1c1917,#3f3f46)',
+  {id:13,numeral:'XIII',name:'Death',ko:'변환',img:`${IMG_BASE}14.png`,
    kw:['변화','끝과 시작','변환','새로움'],
    love:'하나의 관계 국면이 끝나고 새로운 시작이 옵니다. 과거를 내려놓아야 더 좋은 사랑이 들어올 공간이 생깁니다.',
    reversed_love:'변화를 두려워하며 끝난 관계에 매달리고 있을 수 있습니다.'},
-  {id:14,numeral:'XIV',name:'Temperance',ko:'절제',emoji:'🌊',
-   bg:'linear-gradient(145deg,#064e3b,#065f46)',
+  {id:14,numeral:'XIV',name:'Temperance',ko:'절제',img:`${IMG_BASE}15.png`,
    kw:['조화','균형','인내','중용'],
    love:'서두르지 말고 천천히 쌓아가는 사랑입니다. 감정의 균형을 맞추며 조화로운 관계를 만들어 가세요.',
    reversed_love:'극단적인 감정 기복이나 과한 집착이 관계에 영향을 줄 수 있습니다.'},
-  {id:15,numeral:'XV',name:'The Devil',ko:'악마',emoji:'🔗',
-   bg:'linear-gradient(145deg,#1c1917,#292524)',
+  {id:15,numeral:'XV',name:'The Devil',ko:'악마',img:`${IMG_BASE}16.png`,
    kw:['집착','열정','속박','그림자'],
    love:'강렬한 욕망과 끌림이 있습니다. 하지만 집착과 사랑의 차이를 구분하세요. 건강한 경계선이 필요합니다.',
    reversed_love:'독성 관계에서 벗어나거나, 집착을 내려놓을 때가 되었습니다.'},
-  {id:16,numeral:'XVI',name:'The Tower',ko:'탑',emoji:'⚡',
-   bg:'linear-gradient(145deg,#450a0a,#7f1d1d)',
+  {id:16,numeral:'XVI',name:'The Tower',ko:'탑',img:`${IMG_BASE}17.png`,
    kw:['충격','변화','해방','진실'],
    love:'관계에서 예상치 못한 변화가 있을 수 있습니다. 충격적이지만 진실이 드러나고 더 나은 사랑으로 나아가는 계기가 됩니다.',
    reversed_love:'재앙적 상황을 피하고 싶다면 지금 당장 솔직한 대화를 시작하세요.'},
-  {id:17,numeral:'XVII',name:'The Star',ko:'별',emoji:'⭐',
-   bg:'linear-gradient(145deg,#1e3a5f,#1e40af)',
+  {id:17,numeral:'XVII',name:'The Star',ko:'별',img:`${IMG_BASE}18.png`,
    kw:['희망','치유','영감','믿음'],
    love:'사랑에 대한 희망과 믿음을 가지세요. 상처가 치유되고 아름다운 사랑이 찾아오는 시기입니다.',
    reversed_love:'사랑에 대한 희망을 잃지 마세요. 지금의 실망이 전부가 아닙니다.'},
-  {id:18,numeral:'XVIII',name:'The Moon',ko:'달',emoji:'🌙',
-   bg:'linear-gradient(145deg,#1e1b4b,#312e81)',
+  {id:18,numeral:'XVIII',name:'The Moon',ko:'달',img:`${IMG_BASE}19.png`,
    kw:['감성','직관','환상','무의식'],
    love:'감정이 복잡하고 혼란스러운 시기입니다. 직관을 믿되, 현실과 환상을 구분하세요. 솔직한 감정 표현이 중요합니다.',
    reversed_love:'혼란이 해소되고 진실이 드러납니다. 감추었던 감정을 드러낼 시간입니다.'},
-  {id:19,numeral:'XIX',name:'The Sun',ko:'태양',emoji:'☀️',
-   bg:'linear-gradient(145deg,#451a03,#92400e)',
+  {id:19,numeral:'XIX',name:'The Sun',ko:'태양',img:`${IMG_BASE}20.png`,
    kw:['기쁨','행복','활력','성공'],
    love:'밝고 따뜻한 행복한 사랑을 나타냅니다. 자신감을 갖고 사랑을 즐기세요. 긍정적인 에너지가 관계를 빛냅니다.',
    reversed_love:'일시적인 우울감이 있더라도 곧 밝아질 것입니다. 자신을 너무 몰아붙이지 마세요.'},
-  {id:20,numeral:'XX',name:'Judgement',ko:'심판',emoji:'🎺',
-   bg:'linear-gradient(145deg,#1e3a5f,#312e81)',
+  {id:20,numeral:'XX',name:'Judgement',ko:'심판',img:`${IMG_BASE}21.png`,
    kw:['각성','소명','결단','재생'],
    love:'중요한 결단의 시기입니다. 과거의 관계 패턴을 돌아보고 새롭게 깨어나세요. 진정한 사랑을 향한 각성이 찾아옵니다.',
    reversed_love:'자기 비판과 후회가 새로운 사랑을 가로막고 있습니다. 용서와 수용이 필요합니다.'},
-  {id:21,numeral:'XXI',name:'The World',ko:'세계',emoji:'🌍',
-   bg:'linear-gradient(145deg,#14532d,#166534)',
+  {id:21,numeral:'XXI',name:'The World',ko:'세계',img:`${IMG_BASE}22.png`,
    kw:['완성','성취','전체','조화'],
    love:'사랑이 완성되는 아름다운 결실의 시기입니다. 원하는 사랑을 이루거나 관계가 새로운 단계로 도약합니다.',
    reversed_love:'아직 완성에 이르지 못했지만 인내하면 반드시 도달합니다.'},
@@ -730,13 +702,12 @@ function doReading() {
             </svg>
           </div>
         </div>
-        <div class="c-front" style="background:${card.bg}">
-          <div class="c-art">
-            <div class="c-numeral">${card.numeral}</div>
-            <span class="c-emoji">${card.emoji}</span>
+        <div class="c-front">
+          <div class="c-art" style="padding:0;overflow:hidden;">
+            <img src="${card.img}" alt="${card.ko}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
           </div>
           <div class="c-plate">
-            <span class="c-name">${card.name}</span>
+            <span class="c-name">${card.numeral}. ${card.name}</span>
             <span class="c-ko">${card.ko}</span>
           </div>
           <div class="c-reversed-tag">역방향</div>
