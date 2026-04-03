@@ -24,174 +24,46 @@ body{
   min-height:100vh;
   overflow-x:hidden;
 }
-
-/* ── Background ── */
-.bg-gradient{
-  position:fixed;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse at 20% 20%, rgba(108,63,197,.35) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 80%, rgba(224,64,160,.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 50%, rgba(15,10,30,1) 0%, transparent 100%),
-    #0f0a1e;
-  pointer-events:none;
-}
+.bg-gradient{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse at 20% 20%, rgba(108,63,197,.35) 0%, transparent 55%),radial-gradient(ellipse at 80% 80%, rgba(224,64,160,.25) 0%, transparent 55%),radial-gradient(ellipse at 50% 50%, rgba(15,10,30,1) 0%, transparent 100%),#0f0a1e;pointer-events:none;}
 .particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
-.particle{
-  position:absolute;border-radius:50%;
-  animation:float var(--dur,6s) ease-in-out infinite var(--delay,0s);
-  opacity:.0;
-}
-@keyframes float{
-  0%{transform:translateY(100vh) scale(0);opacity:0}
-  10%{opacity:.6}
-  90%{opacity:.3}
-  100%{transform:translateY(-10vh) scale(1);opacity:0}
-}
-
-/* ── Layout ── */
+.particle{position:absolute;border-radius:50%;animation:float var(--dur,6s) ease-in-out infinite var(--delay,0s);opacity:.0;}
+@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.3}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 #app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding-bottom:4rem;}
-
-/* ── Header ── */
-header{
-  text-align:center;padding:1.2rem 1rem 1.5rem;width:100%;
-  background:linear-gradient(180deg,rgba(108,63,197,.15) 0%,transparent 100%);
-  border-bottom:1px solid rgba(240,192,96,.12);
-  position:relative;
-}
-.yt-bar{
-  display:flex;align-items:center;justify-content:center;
-  gap:.5rem;margin-bottom:1rem;
-}
-.yt-link{
-  display:flex;align-items:center;gap:.45rem;
-  text-decoration:none;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,80,80,.25);
-  border-radius:99px;
-  padding:.35rem .9rem .35rem .55rem;
-  transition:all .3s;
-}
-.yt-link:hover{
-  background:rgba(255,50,50,.15);
-  border-color:rgba(255,80,80,.6);
-  box-shadow:0 0 16px rgba(255,50,50,.25);
-}
-.yt-icon{
-  width:26px;height:26px;flex-shrink:0;
-}
-.yt-name{
-  font-family:'Noto Serif KR',serif;
-  font-size:.88rem;font-weight:600;
-  color:#ff8080;letter-spacing:.04em;
-}
-.yt-sub-text{
-  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;
-  color:rgba(255,120,120,.5);text-transform:uppercase;margin-left:.2rem;
-}
+header{text-align:center;padding:1.2rem 1rem 1.5rem;width:100%;background:linear-gradient(180deg,rgba(108,63,197,.15) 0%,transparent 100%);border-bottom:1px solid rgba(240,192,96,.12);position:relative;}
+.yt-bar{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:1rem;}
+.yt-link{display:flex;align-items:center;gap:.45rem;text-decoration:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,80,80,.25);border-radius:99px;padding:.35rem .9rem .35rem .55rem;transition:all .3s;}
+.yt-link:hover{background:rgba(255,50,50,.15);border-color:rgba(255,80,80,.6);box-shadow:0 0 16px rgba(255,50,50,.25);}
+.yt-icon{width:26px;height:26px;flex-shrink:0;}
+.yt-name{font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:600;color:#ff8080;letter-spacing:.04em;}
+.yt-sub-text{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:rgba(255,120,120,.5);text-transform:uppercase;margin-left:.2rem;}
 .heart-icon{font-size:1.6rem;display:block;margin-bottom:.35rem;animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-.title-main{
-  font-family:'Cinzel Decorative',serif;
-  font-size:clamp(1.4rem,4vw,2.2rem);
-  background:linear-gradient(135deg,#e040a0,#c084fc,#f0c060);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  letter-spacing:.06em;
-  line-height:1.3;
-}
-.title-version{
-  display:inline-block;
-  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;
-  color:rgba(192,132,252,.45);vertical-align:middle;margin-left:.4rem;
-}
-.title-sub{
-  font-size:.8rem;color:rgba(200,170,240,.6);
-  letter-spacing:.22em;margin-top:.35rem;
-  font-family:'Cinzel',serif;text-transform:uppercase;
-}
-
-/* ── Screens ── */
+.title-main{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,4vw,2.2rem);background:linear-gradient(135deg,#e040a0,#c084fc,#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.06em;line-height:1.3;}
+.title-version{display:inline-block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:rgba(192,132,252,.45);vertical-align:middle;margin-left:.4rem;}
+.title-sub{font-size:.8rem;color:rgba(200,170,240,.6);letter-spacing:.22em;margin-top:.35rem;font-family:'Cinzel',serif;text-transform:uppercase;}
 .screen{display:none;width:100%;flex:1;flex-direction:column;align-items:center;padding:2rem 1rem;}
 .screen.active{display:flex;}
-
-/* ── Welcome ── */
 #screen-welcome{gap:2rem;justify-content:center;}
 .category-grid{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;max-width:600px;}
-.category-btn{
-  flex:1;min-width:120px;max-width:160px;
-  border:1.5px solid rgba(192,132,252,.3);
-  background:rgba(108,63,197,.08);
-  color:#d8b4fe;padding:1rem .75rem;
-  cursor:pointer;border-radius:12px;
-  font-family:'Noto Serif KR',serif;font-size:.85rem;
-  transition:all .3s;text-align:center;
-}
-.category-btn:hover,.category-btn.active{
-  border-color:var(--pink);background:rgba(224,64,160,.15);
-  color:#fce4ff;box-shadow:0 0 20px rgba(224,64,160,.2);
-  transform:translateY(-2px);
-}
+.category-btn{flex:1;min-width:120px;max-width:160px;border:1.5px solid rgba(192,132,252,.3);background:rgba(108,63,197,.08);color:#d8b4fe;padding:1rem .75rem;cursor:pointer;border-radius:12px;font-family:'Noto Serif KR',serif;font-size:.85rem;transition:all .3s;text-align:center;}
+.category-btn:hover,.category-btn.active{border-color:var(--pink);background:rgba(224,64,160,.15);color:#fce4ff;box-shadow:0 0 20px rgba(224,64,160,.2);transform:translateY(-2px);}
 .category-btn .cat-emoji{font-size:1.5rem;display:block;margin-bottom:.4rem;}
 .category-btn .cat-name{font-weight:600;display:block;margin-bottom:.2rem;}
 .category-btn .cat-desc{font-size:.72rem;color:rgba(200,170,240,.6);display:block;}
-
 .spread-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
-.spread-pill{
-  border:1px solid rgba(192,132,252,.3);background:transparent;
-  color:rgba(200,170,240,.7);padding:.5rem 1.2rem;border-radius:99px;
-  cursor:pointer;font-family:'Noto Serif KR',serif;font-size:.82rem;
-  transition:all .25s;
-}
-.spread-pill:hover,.spread-pill.active{
-  border-color:#c084fc;background:rgba(192,132,252,.15);color:#e9d5ff;
-}
-
-.start-btn{
-  background:linear-gradient(135deg,#9333ea,#ec4899,#f59e0b);
-  border:none;color:#fff;
-  padding:1.1rem 3.5rem;border-radius:99px;
-  font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:600;
-  cursor:pointer;letter-spacing:.08em;
-  box-shadow:0 4px 30px rgba(147,51,234,.4);
-  transition:all .3s;position:relative;overflow:hidden;
-}
-.start-btn::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);
-  transform:translateX(-100%);transition:transform .6s;
-}
+.spread-pill{border:1px solid rgba(192,132,252,.3);background:transparent;color:rgba(200,170,240,.7);padding:.5rem 1.2rem;border-radius:99px;cursor:pointer;font-family:'Noto Serif KR',serif;font-size:.82rem;transition:all .25s;}
+.spread-pill:hover,.spread-pill.active{border-color:#c084fc;background:rgba(192,132,252,.15);color:#e9d5ff;}
+.start-btn{background:linear-gradient(135deg,#9333ea,#ec4899,#f59e0b);border:none;color:#fff;padding:1.1rem 3.5rem;border-radius:99px;font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:600;cursor:pointer;letter-spacing:.08em;box-shadow:0 4px 30px rgba(147,51,234,.4);transition:all .3s;position:relative;overflow:hidden;}
+.start-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .6s;}
 .start-btn:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(147,51,234,.5);}
 .start-btn:hover::after{transform:translateX(100%);}
-
-.oracle-quote{
-  font-size:.9rem;font-style:italic;
-  color:rgba(200,170,240,.6);text-align:center;
-  max-width:380px;line-height:1.8;
-  border-left:2px solid rgba(192,132,252,.3);
-  padding-left:1rem;
-}
-
-/* ── Shuffle Screen ── */
+.oracle-quote{font-size:.9rem;font-style:italic;color:rgba(200,170,240,.6);text-align:center;max-width:380px;line-height:1.8;border-left:2px solid rgba(192,132,252,.3);padding-left:1rem;}
 #screen-shuffle{gap:2rem;justify-content:center;min-height:70vh;}
-.shuffle-instruction{
-  text-align:center;
-  font-size:.95rem;color:rgba(200,170,240,.75);line-height:1.8;
-}
+.shuffle-instruction{text-align:center;font-size:.95rem;color:rgba(200,170,240,.75);line-height:1.8;}
 .shuffle-instruction strong{color:#d8b4fe;font-weight:600;}
-.deck-wrap{
-  position:relative;width:var(--card-w);height:var(--card-h);
-  cursor:pointer;
-}
-.deck-pile{
-  position:absolute;inset:0;
-  background:linear-gradient(145deg,#2d1b69,#4c1d95,#2d1b69);
-  border:1.5px solid rgba(192,132,252,.4);border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .4s ease;
-}
-.deck-pile::before{
-  content:'';position:absolute;inset:8px;
-  border:1px solid rgba(192,132,252,.2);border-radius:8px;
-}
+.deck-wrap{position:relative;width:var(--card-w);height:var(--card-h);cursor:pointer;}
+.deck-pile{position:absolute;inset:0;background:linear-gradient(145deg,#2d1b69,#4c1d95,#2d1b69);border:1.5px solid rgba(192,132,252,.4);border-radius:12px;display:flex;align-items:center;justify-content:center;transition:transform .4s ease;}
+.deck-pile::before{content:'';position:absolute;inset:8px;border:1px solid rgba(192,132,252,.2);border-radius:8px;}
 .deck-pile svg{width:55%;height:55%;opacity:.5;}
 .deck-pile:nth-child(1){transform:rotate(-5deg) translate(-10px,4px);}
 .deck-pile:nth-child(2){transform:rotate(-2.5deg) translate(-5px,2px);}
@@ -208,170 +80,67 @@ header{
 .shuffling .deck-pile:nth-child(3){animation-delay:.1s;}
 .shuffling .deck-pile:nth-child(4){animation-delay:.15s;}
 .shuffling .deck-pile:nth-child(5){animation-delay:.2s;}
-
-.shuffle-progress{
-  display:flex;gap:.5rem;
-}
-.prog-dot{
-  width:10px;height:10px;border-radius:50%;
-  border:1.5px solid rgba(192,132,252,.4);
-  transition:all .3s;
-}
+.shuffle-progress{display:flex;gap:.5rem;}
+.prog-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(192,132,252,.4);transition:all .3s;}
 .prog-dot.done{background:#c084fc;border-color:#c084fc;box-shadow:0 0 8px #c084fc;}
-
-.reveal-btn{
-  background:linear-gradient(135deg,#7c3aed,#db2777);
-  border:none;color:#fff;padding:.9rem 2.5rem;border-radius:99px;
-  font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:600;
-  cursor:pointer;box-shadow:0 4px 24px rgba(124,58,237,.4);
-  transition:all .3s;display:none;
-  animation:fadeIn .5s ease;
-}
+.reveal-btn{background:linear-gradient(135deg,#7c3aed,#db2777);border:none;color:#fff;padding:.9rem 2.5rem;border-radius:99px;font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:600;cursor:pointer;box-shadow:0 4px 24px rgba(124,58,237,.4);transition:all .3s;display:none;animation:fadeIn .5s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .reveal-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,.5);}
-
-.back-link{
-  font-size:.8rem;color:rgba(200,170,240,.4);
-  cursor:pointer;letter-spacing:.15em;font-family:'Cinzel',serif;text-transform:uppercase;
-  transition:color .2s;border:none;background:none;
-}
+.back-link{font-size:.8rem;color:rgba(200,170,240,.4);cursor:pointer;letter-spacing:.15em;font-family:'Cinzel',serif;text-transform:uppercase;transition:color .2s;border:none;background:none;}
 .back-link:hover{color:rgba(200,170,240,.8);}
-
-/* ── Reading Screen ── */
 #screen-reading{gap:1.5rem;padding-top:1.5rem;}
 .reading-header{text-align:center;}
-.reading-category{
-  font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.35em;
-  color:rgba(192,132,252,.6);text-transform:uppercase;
-}
-.cards-area{
-  display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;
-  padding:.5rem;
-}
+.reading-category{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.35em;color:rgba(192,132,252,.6);text-transform:uppercase;}
+.cards-area{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;padding:.5rem;}
 .card-slot{display:flex;flex-direction:column;align-items:center;gap:.6rem;}
-.pos-label{
-  font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;
-  color:rgba(192,132,252,.5);text-transform:uppercase;
-}
-/* Tarot Card */
-.tarot-card{
-  width:var(--card-w);height:var(--card-h);
-  perspective:900px;cursor:pointer;
-  flex-shrink:0;
-}
-.card-inner{
-  width:100%;height:100%;position:relative;
-  transform-style:preserve-3d;
-  transition:transform .85s cubic-bezier(.4,0,.2,1);
-}
+.pos-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;color:rgba(192,132,252,.5);text-transform:uppercase;}
+.tarot-card{width:var(--card-w);height:var(--card-h);perspective:900px;cursor:pointer;flex-shrink:0;}
+.card-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.4,0,.2,1);}
 .tarot-card.flipped .card-inner{transform:rotateY(180deg);}
-.c-back,.c-front{
-  position:absolute;inset:0;border-radius:12px;
-  backface-visibility:hidden;overflow:hidden;
-  border:1.5px solid rgba(192,132,252,.3);
-}
-.c-back{
-  background:linear-gradient(145deg,#2d1b69,#4c1d95,#2d1b69);
-  display:flex;align-items:center;justify-content:center;
-}
+.c-back,.c-front{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;overflow:hidden;border:1.5px solid rgba(192,132,252,.3);}
+.c-back{background:linear-gradient(145deg,#2d1b69,#4c1d95,#2d1b69);display:flex;align-items:center;justify-content:center;}
 .c-back-inner{width:80%;height:80%;border:1px solid rgba(192,132,252,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.c-front{
-  transform:rotateY(180deg);
-  display:flex;flex-direction:column;
-  background:#1a0f35;
-}
-.c-art{
-  flex:1;position:relative;overflow:hidden;padding:0;
-}
-.c-plate{
-  background:rgba(0,0,0,.55);padding:.4rem .5rem;text-align:center;
-  border-top:1px solid rgba(192,132,252,.15);
-}
-.c-name{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;color:var(--gold);display:block;text-transform:uppercase;}
-.c-ko{font-size:.72rem;color:rgba(200,170,240,.7);display:block;margin-top:1px;}
-.c-reversed-tag{
-  position:absolute;bottom:40px;right:6px;
-  font-size:.48rem;letter-spacing:.08em;font-family:'Cinzel',serif;
-  background:rgba(220,38,38,.6);color:#fca5a5;
-  padding:2px 5px;border-radius:3px;text-transform:uppercase;display:none;
-}
+.c-front{transform:rotateY(180deg);display:flex;flex-direction:column;background:#1a0f35;}
+.c-art{flex:1;position:relative;overflow:hidden;padding:0;}
+.c-art img{width:100%;height:100%;object-fit:cover;display:block;}
+.c-plate{background:rgba(0,0,0,.7);padding:.4rem .5rem;text-align:center;border-top:1px solid rgba(192,132,252,.15);}
+.c-name{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;color:var(--gold);display:block;text-transform:uppercase;}
+.c-ko{font-size:.72rem;color:rgba(200,170,240,.8);display:block;margin-top:1px;font-weight:600;}
+.c-reversed-tag{position:absolute;top:6px;right:6px;font-size:.48rem;letter-spacing:.08em;font-family:'Cinzel',serif;background:rgba(220,38,38,.75);color:#fca5a5;padding:2px 5px;border-radius:3px;text-transform:uppercase;display:none;z-index:2;}
 .card-reversed .c-reversed-tag{display:block;}
-.card-reversed .c-front{transform:rotateY(180deg) rotateZ(180deg);}
 
-/* ── Interpretation ── */
-.interp-box{
-  max-width:680px;width:100%;
-  background:linear-gradient(145deg,rgba(45,27,105,.7),rgba(26,15,53,.8));
-  border:1px solid rgba(192,132,252,.2);border-radius:16px;
-  padding:1.75rem;
-  opacity:0;transform:translateY(16px);transition:all .6s .2s;
-}
+/* ★ 역방향: 이미지만 뒤집고 이름판은 정상 ★ */
+.card-reversed .c-front{transform:rotateY(180deg);}
+.card-reversed .c-art img{transform:rotate(180deg);}
+
+.interp-box{max-width:680px;width:100%;background:linear-gradient(145deg,rgba(45,27,105,.7),rgba(26,15,53,.8));border:1px solid rgba(192,132,252,.2);border-radius:16px;padding:1.75rem;opacity:0;transform:translateY(16px);transition:all .6s .2s;}
 .interp-box.show{opacity:1;transform:translateY(0);}
-.interp-title{
-  font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;
-  color:var(--pink);text-transform:uppercase;text-align:center;
-  margin-bottom:1.2rem;padding-bottom:.8rem;
-  border-bottom:1px solid rgba(192,132,252,.15);
-}
-.interp-card{
-  margin-bottom:1rem;padding:1rem;
-  background:rgba(192,132,252,.05);border-radius:10px;
-  border:1px solid rgba(192,132,252,.1);
-}
-.interp-card-header{
-  display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;
-}
-.interp-pos-badge{
-  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;
-  background:rgba(192,132,252,.2);color:#c084fc;
-  padding:.2rem .55rem;border-radius:99px;text-transform:uppercase;flex-shrink:0;
-}
+.interp-title{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;color:var(--pink);text-transform:uppercase;text-align:center;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid rgba(192,132,252,.15);}
+.interp-card{margin-bottom:1rem;padding:1rem;background:rgba(192,132,252,.05);border-radius:10px;border:1px solid rgba(192,132,252,.1);}
+.interp-card-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;}
+.interp-pos-badge{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;background:rgba(192,132,252,.2);color:#c084fc;padding:.2rem .55rem;border-radius:99px;text-transform:uppercase;flex-shrink:0;}
 .interp-card-name{font-size:.85rem;color:var(--gold);font-weight:600;}
 .interp-text{font-size:.88rem;color:rgba(220,200,240,.8);line-height:1.85;font-style:italic;}
 .keywords-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem;}
-.keyword-tag{
-  font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.1em;
-  border:1px solid rgba(192,132,252,.25);color:rgba(192,132,252,.7);
-  padding:.18rem .5rem;border-radius:4px;text-transform:uppercase;
-}
-.overall-msg{
-  margin-top:1rem;padding:1rem;text-align:center;
-  background:linear-gradient(135deg,rgba(147,51,234,.1),rgba(236,72,153,.1));
-  border-radius:10px;border:1px solid rgba(236,72,153,.2);
-}
+.keyword-tag{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.1em;border:1px solid rgba(192,132,252,.25);color:rgba(192,132,252,.7);padding:.18rem .5rem;border-radius:4px;text-transform:uppercase;}
+.overall-msg{margin-top:1rem;padding:1rem;text-align:center;background:linear-gradient(135deg,rgba(147,51,234,.1),rgba(236,72,153,.1));border-radius:10px;border:1px solid rgba(236,72,153,.2);}
 .overall-msg p{font-size:.88rem;color:rgba(220,200,240,.75);line-height:1.8;}
 .action-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
-.act-btn{
-  background:linear-gradient(135deg,#7c3aed,#db2777);
-  border:none;color:#fff;padding:.85rem 2rem;border-radius:99px;
-  font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:600;
-  cursor:pointer;transition:all .3s;
-  box-shadow:0 4px 20px rgba(124,58,237,.3);
-}
+.act-btn{background:linear-gradient(135deg,#7c3aed,#db2777);border:none;color:#fff;padding:.85rem 2rem;border-radius:99px;font-family:'Noto Serif KR',serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(124,58,237,.3);}
 .act-btn:hover{transform:translateY(-2px);}
-.act-btn-ghost{
-  background:transparent;border:1px solid rgba(192,132,252,.3);
-  color:rgba(192,132,252,.7);padding:.85rem 2rem;border-radius:99px;
-  font-family:'Noto Serif KR',serif;font-size:.88rem;
-  cursor:pointer;transition:all .3s;
-}
+.act-btn-ghost{background:transparent;border:1px solid rgba(192,132,252,.3);color:rgba(192,132,252,.7);padding:.85rem 2rem;border-radius:99px;font-family:'Noto Serif KR',serif;font-size:.88rem;cursor:pointer;transition:all .3s;}
 .act-btn-ghost:hover{border-color:#c084fc;color:#c084fc;}
-
-@media(max-width:480px){
-  :root{--card-w:110px;--card-h:190px;}
-  .cards-area{gap:1rem;}
-}
+@media(max-width:480px){:root{--card-w:110px;--card-h:190px;}.cards-area{gap:1rem;}}
 </style>
 </head>
 <body>
 <div class="bg-gradient"></div>
 <div class="particles" id="particles"></div>
-
 <div id="app">
 <header>
   <div class="yt-bar">
     <a class="yt-link" href="https://www.youtube.com/@mindcode_k" target="_blank" rel="noopener">
-      <svg class="yt-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="yt-icon" viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#FF0000" opacity=".9"/>
         <path d="M19.6 7.8a2 2 0 0 0-1.4-1.4C16.8 6 12 6 12 6s-4.8 0-6.2.4A2 2 0 0 0 4.4 7.8C4 9.2 4 12 4 12s0 2.8.4 4.2a2 2 0 0 0 1.4 1.4C7.2 18 12 18 12 18s4.8 0 6.2-.4a2 2 0 0 0 1.4-1.4C20 14.8 20 12 20 12s0-2.8-.4-4.2Z" fill="white"/>
         <path d="M10 15l5-3-5-3v6Z" fill="#FF0000"/>
@@ -385,39 +154,17 @@ header{
   <div class="title-sub">당신의 사랑 이야기를 카드가 말합니다</div>
 </header>
 
-<!-- Welcome -->
 <div id="screen-welcome" class="screen active">
-  <p class="oracle-quote">
-    "사랑은 우주에서 가장 강력한 에너지입니다.<br>
-    카드는 그 에너지의 흐름을 읽어드립니다."
-  </p>
-
+  <p class="oracle-quote">"사랑은 우주에서 가장 강력한 에너지입니다.<br>카드는 그 에너지의 흐름을 읽어드립니다."</p>
   <div style="text-align:center">
     <div style="font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;color:rgba(192,132,252,.5);text-transform:uppercase;margin-bottom:1rem;">질문 유형 선택</div>
     <div class="category-grid">
-      <button class="category-btn active" data-cat="현재 연애운">
-        <span class="cat-emoji">💫</span>
-        <span class="cat-name">전체 연애운</span>
-        <span class="cat-desc">지금의 사랑 에너지</span>
-      </button>
-      <button class="category-btn" data-cat="새로운 인연">
-        <span class="cat-emoji">🌹</span>
-        <span class="cat-name">새 인연</span>
-        <span class="cat-desc">다가올 만남과 시작</span>
-      </button>
-      <button class="category-btn" data-cat="현재 관계">
-        <span class="cat-emoji">💑</span>
-        <span class="cat-name">현재 관계</span>
-        <span class="cat-desc">지금 사귀는 사람과</span>
-      </button>
-      <button class="category-btn" data-cat="이별과 재회">
-        <span class="cat-emoji">🌙</span>
-        <span class="cat-name">이별 / 재회</span>
-        <span class="cat-desc">헤어짐 혹은 돌아옴</span>
-      </button>
+      <button class="category-btn active" data-cat="현재 연애운"><span class="cat-emoji">💫</span><span class="cat-name">전체 연애운</span><span class="cat-desc">지금의 사랑 에너지</span></button>
+      <button class="category-btn" data-cat="새로운 인연"><span class="cat-emoji">🌹</span><span class="cat-name">새 인연</span><span class="cat-desc">다가올 만남과 시작</span></button>
+      <button class="category-btn" data-cat="현재 관계"><span class="cat-emoji">💑</span><span class="cat-name">현재 관계</span><span class="cat-desc">지금 사귀는 사람과</span></button>
+      <button class="category-btn" data-cat="이별과 재회"><span class="cat-emoji">🌙</span><span class="cat-name">이별 / 재회</span><span class="cat-desc">헤어짐 혹은 돌아옴</span></button>
     </div>
   </div>
-
   <div style="text-align:center">
     <div style="font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;color:rgba(192,132,252,.5);text-transform:uppercase;margin-bottom:.75rem;">카드 수</div>
     <div class="spread-row">
@@ -426,17 +173,11 @@ header{
       <button class="spread-pill" data-n="5">5장 (심층 리딩)</button>
     </div>
   </div>
-
   <button class="start-btn" id="btn-start">💕 타로 카드 펼치기</button>
 </div>
 
-<!-- Shuffle -->
 <div id="screen-shuffle" class="screen">
-  <div class="shuffle-instruction">
-    <strong>마음을 고요히 하세요</strong><br>
-    질문을 마음속에 품고<br>카드 덱을 <strong>3번 클릭</strong>하여 섞어주세요
-  </div>
-
+  <div class="shuffle-instruction"><strong>마음을 고요히 하세요</strong><br>질문을 마음속에 품고<br>카드 덱을 <strong>3번 클릭</strong>하여 섞어주세요</div>
   <div class="deck-wrap" id="deck-wrap">
     <div class="deck-pile"><svg viewBox="0 0 60 60"><path d="M30 5 L35 20 L52 20 L38 30 L43 47 L30 37 L17 47 L22 30 L8 20 L25 20 Z" fill="none" stroke="#c084fc" stroke-width="1.5"/></svg></div>
     <div class="deck-pile"><svg viewBox="0 0 60 60"><path d="M30 5 L35 20 L52 20 L38 30 L43 47 L30 37 L17 47 L22 30 L8 20 L25 20 Z" fill="none" stroke="#c084fc" stroke-width="1.5"/></svg></div>
@@ -444,22 +185,17 @@ header{
     <div class="deck-pile"><svg viewBox="0 0 60 60"><path d="M30 5 L35 20 L52 20 L38 30 L43 47 L30 37 L17 47 L22 30 L8 20 L25 20 Z" fill="none" stroke="#c084fc" stroke-width="1.5"/></svg></div>
     <div class="deck-pile"><svg viewBox="0 0 60 60"><path d="M30 5 L35 20 L52 20 L38 30 L43 47 L30 37 L17 47 L22 30 L8 20 L25 20 Z" fill="none" stroke="#c084fc" stroke-width="1.5"/></svg></div>
   </div>
-
   <div class="shuffle-progress">
     <div class="prog-dot" id="d1"></div>
     <div class="prog-dot" id="d2"></div>
     <div class="prog-dot" id="d3"></div>
   </div>
-
   <button class="reveal-btn" id="btn-reveal">✨ 카드를 공개하세요 ✨</button>
   <button class="back-link" onclick="goTo('welcome')">← 돌아가기</button>
 </div>
 
-<!-- Reading -->
 <div id="screen-reading" class="screen">
-  <div class="reading-header">
-    <div class="reading-category" id="reading-cat-label"></div>
-  </div>
+  <div class="reading-header"><div class="reading-category" id="reading-cat-label"></div></div>
   <div class="cards-area" id="cards-area"></div>
   <div class="interp-box" id="interp-box">
     <div class="interp-title">💕 당신의 연애운 해석</div>
@@ -471,13 +207,12 @@ header{
     </div>
   </div>
 </div>
-</div><!-- /app -->
+</div>
 
 <script>
-// ── Particles ──
 (function(){
-  const wrap = document.getElementById('particles');
-  const colors = ['#c084fc','#ec4899','#f0c060','#818cf8'];
+  const wrap=document.getElementById('particles');
+  const colors=['#c084fc','#ec4899','#f0c060','#818cf8'];
   for(let i=0;i<40;i++){
     const p=document.createElement('div');
     p.className='particle';
@@ -487,213 +222,98 @@ header{
   }
 })();
 
-// ── Cards Data ──
-const IMG_BASE = 'https://knowsensekr.github.io/love/';
-const CARDS = [
-  {id:0,numeral:'0',name:'The Fool',ko:'바보',img:`${IMG_BASE}1.png`,
-   kw:['자유','새 시작','순수','모험'],
-   love:'새로운 사랑의 시작을 알립니다. 두려움 없이 마음을 열어보세요. 예상치 못한 곳에서 설레는 만남이 찾아올 수 있습니다.',
-   reversed_love:'관계에서 너무 충동적으로 행동하거나 준비 없이 뛰어들고 있지 않은지 점검하세요.'},
-  {id:1,numeral:'I',name:'The Magician',ko:'마법사',img:`${IMG_BASE}2.png`,
-   kw:['매력','표현','창조','적극성'],
-   love:'당신의 매력이 빛나는 시기입니다. 마음을 표현하세요. 행동으로 보여주는 사랑이 관계를 발전시킵니다.',
-   reversed_love:'상대방을 조종하거나 진실하지 못한 접근을 경계하세요.'},
-  {id:2,numeral:'II',name:'High Priestess',ko:'여사제',img:`${IMG_BASE}3.png`,
-   kw:['직관','신비','인내','내면'],
-   love:'서두르지 마세요. 직관을 믿고 기다리세요. 겉으로 드러나지 않은 깊은 감정이 있습니다.',
-   reversed_love:'숨겨진 감정이나 비밀이 관계에 영향을 주고 있을 수 있습니다.'},
-  {id:3,numeral:'III',name:'The Empress',ko:'여제',img:`${IMG_BASE}4.png`,
-   kw:['풍요','사랑','온기','아름다움'],
-   love:'사랑이 꽃피는 시기입니다. 관계가 풍요롭고 따뜻하게 성장합니다. 자신을 먼저 사랑하면 더 좋은 사랑이 옵니다.',
-   reversed_love:'자기 자신을 소홀히 하거나 의존적인 관계 패턴을 주의하세요.'},
-  {id:4,numeral:'IV',name:'The Emperor',ko:'황제',img:`${IMG_BASE}5.png`,
-   kw:['안정','보호','신뢰','책임'],
-   love:'안정적이고 든든한 사랑을 나타냅니다. 상대방이 믿음직스럽거나, 관계에 안정이 필요한 시기입니다.',
-   reversed_love:'지나친 통제나 고집이 관계를 경직시킬 수 있습니다.'},
-  {id:5,numeral:'V',name:'The Hierophant',ko:'교황',img:`${IMG_BASE}6.png`,
-   kw:['헌신','전통','약속','진지함'],
-   love:'진지하고 헌신적인 관계를 암시합니다. 사회적으로 인정받는 관계로 발전할 가능성이 있습니다.',
-   reversed_love:'관습에서 벗어난 새로운 관계 방식이 필요할 수 있습니다.'},
-  {id:6,numeral:'VI',name:'The Lovers',ko:'연인',img:`${IMG_BASE}7.png`,
-   kw:['사랑','선택','조화','깊은 유대'],
-   love:'강렬한 끌림과 깊은 감정적 연결을 의미합니다. 중요한 선택의 시기이며, 진정한 사랑의 에너지가 흐릅니다.',
-   reversed_love:'관계에서 불균형이나 가치관 충돌이 있을 수 있습니다. 솔직한 대화가 필요합니다.'},
-  {id:7,numeral:'VII',name:'The Chariot',ko:'전차',img:`${IMG_BASE}8.png`,
-   kw:['용기','전진','의지','성취'],
-   love:'원하는 사랑을 향해 적극적으로 나아가세요. 감정을 잘 다스리며 관계를 이끌어 나갈 수 있습니다.',
-   reversed_love:'감정 기복이나 공격적인 태도가 관계를 방해할 수 있습니다.'},
-  {id:8,numeral:'VIII',name:'Strength',ko:'힘',img:`${IMG_BASE}9.png`,
-   kw:['인내','용기','온화함','내면의 힘'],
-   love:'부드러움과 강인함으로 상대의 마음을 사로잡습니다. 인내와 이해로 관계를 지속하면 아름다운 결실이 있습니다.',
-   reversed_love:'자기 의심이나 두려움이 사랑을 가로막고 있을 수 있습니다.'},
-  {id:9,numeral:'IX',name:'The Hermit',ko:'은둔자',img:`${IMG_BASE}10.png`,
-   kw:['성찰','지혜','홀로서기','내면 탐구'],
-   love:'지금은 혼자만의 시간이 필요한 시기입니다. 자신을 더 잘 알게 될수록 더 건강한 사랑이 찾아옵니다.',
-   reversed_love:'외로움이나 고립을 두려워하며 잘못된 관계에 매달리고 있지 않은지 살펴보세요.'},
-  {id:10,numeral:'X',name:'Wheel of Fortune',ko:'운명의 바퀴',img:`${IMG_BASE}11.png`,
-   kw:['운명','전환','행운','변화'],
-   love:'사랑의 운명적 전환점이 찾아옵니다. 예상치 못한 만남이나 관계의 새로운 국면이 시작될 수 있습니다.',
-   reversed_love:'변화에 저항하면 관계가 정체될 수 있습니다. 흐름을 받아들이세요.'},
-  {id:11,numeral:'XI',name:'Justice',ko:'정의',img:`${IMG_BASE}12.png`,
-   kw:['균형','공정','진실','인과'],
-   love:'관계에서 균형과 공정이 중요합니다. 상대방에게 진솔하게 대하면 그만큼 돌아옵니다.',
-   reversed_love:'한쪽이 더 많이 노력하고 있는 불균형한 관계를 점검해보세요.'},
-  {id:12,numeral:'XII',name:'The Hanged Man',ko:'매달린 남자',img:`${IMG_BASE}13.png`,
-   kw:['기다림','희생','관점 전환','인내'],
-   love:'사랑을 위해 기다림이 필요한 시기입니다. 관점을 바꾸면 상대방이 다르게 보일 수 있습니다.',
-   reversed_love:'의미 없는 기다림은 그만하세요. 결단이 필요한 때입니다.'},
-  {id:13,numeral:'XIII',name:'Death',ko:'변환',img:`${IMG_BASE}14.png`,
-   kw:['변화','끝과 시작','변환','새로움'],
-   love:'하나의 관계 국면이 끝나고 새로운 시작이 옵니다. 과거를 내려놓아야 더 좋은 사랑이 들어올 공간이 생깁니다.',
-   reversed_love:'변화를 두려워하며 끝난 관계에 매달리고 있을 수 있습니다.'},
-  {id:14,numeral:'XIV',name:'Temperance',ko:'절제',img:`${IMG_BASE}15.png`,
-   kw:['조화','균형','인내','중용'],
-   love:'서두르지 말고 천천히 쌓아가는 사랑입니다. 감정의 균형을 맞추며 조화로운 관계를 만들어 가세요.',
-   reversed_love:'극단적인 감정 기복이나 과한 집착이 관계에 영향을 줄 수 있습니다.'},
-  {id:15,numeral:'XV',name:'The Devil',ko:'악마',img:`${IMG_BASE}16.png`,
-   kw:['집착','열정','속박','그림자'],
-   love:'강렬한 욕망과 끌림이 있습니다. 하지만 집착과 사랑의 차이를 구분하세요. 건강한 경계선이 필요합니다.',
-   reversed_love:'독성 관계에서 벗어나거나, 집착을 내려놓을 때가 되었습니다.'},
-  {id:16,numeral:'XVI',name:'The Tower',ko:'탑',img:`${IMG_BASE}17.png`,
-   kw:['충격','변화','해방','진실'],
-   love:'관계에서 예상치 못한 변화가 있을 수 있습니다. 충격적이지만 진실이 드러나고 더 나은 사랑으로 나아가는 계기가 됩니다.',
-   reversed_love:'재앙적 상황을 피하고 싶다면 지금 당장 솔직한 대화를 시작하세요.'},
-  {id:17,numeral:'XVII',name:'The Star',ko:'별',img:`${IMG_BASE}18.png`,
-   kw:['희망','치유','영감','믿음'],
-   love:'사랑에 대한 희망과 믿음을 가지세요. 상처가 치유되고 아름다운 사랑이 찾아오는 시기입니다.',
-   reversed_love:'사랑에 대한 희망을 잃지 마세요. 지금의 실망이 전부가 아닙니다.'},
-  {id:18,numeral:'XVIII',name:'The Moon',ko:'달',img:`${IMG_BASE}19.png`,
-   kw:['감성','직관','환상','무의식'],
-   love:'감정이 복잡하고 혼란스러운 시기입니다. 직관을 믿되, 현실과 환상을 구분하세요. 솔직한 감정 표현이 중요합니다.',
-   reversed_love:'혼란이 해소되고 진실이 드러납니다. 감추었던 감정을 드러낼 시간입니다.'},
-  {id:19,numeral:'XIX',name:'The Sun',ko:'태양',img:`${IMG_BASE}20.png`,
-   kw:['기쁨','행복','활력','성공'],
-   love:'밝고 따뜻한 행복한 사랑을 나타냅니다. 자신감을 갖고 사랑을 즐기세요. 긍정적인 에너지가 관계를 빛냅니다.',
-   reversed_love:'일시적인 우울감이 있더라도 곧 밝아질 것입니다. 자신을 너무 몰아붙이지 마세요.'},
-  {id:20,numeral:'XX',name:'Judgement',ko:'심판',img:`${IMG_BASE}21.png`,
-   kw:['각성','소명','결단','재생'],
-   love:'중요한 결단의 시기입니다. 과거의 관계 패턴을 돌아보고 새롭게 깨어나세요. 진정한 사랑을 향한 각성이 찾아옵니다.',
-   reversed_love:'자기 비판과 후회가 새로운 사랑을 가로막고 있습니다. 용서와 수용이 필요합니다.'},
-  {id:21,numeral:'XXI',name:'The World',ko:'세계',img:`${IMG_BASE}22.png`,
-   kw:['완성','성취','전체','조화'],
-   love:'사랑이 완성되는 아름다운 결실의 시기입니다. 원하는 사랑을 이루거나 관계가 새로운 단계로 도약합니다.',
-   reversed_love:'아직 완성에 이르지 못했지만 인내하면 반드시 도달합니다.'},
+const IMG_BASE='https://knowsensekr.github.io/love/';
+const CARDS=[
+  {id:0,numeral:'0',name:'The Fool',ko:'바보',img:`${IMG_BASE}1.png`,kw:['자유','새 시작','순수','모험'],love:'새로운 사랑의 시작을 알립니다. 두려움 없이 마음을 열어보세요. 예상치 못한 곳에서 설레는 만남이 찾아올 수 있습니다.',reversed_love:'관계에서 너무 충동적으로 행동하거나 준비 없이 뛰어들고 있지 않은지 점검하세요.'},
+  {id:1,numeral:'I',name:'The Magician',ko:'마법사',img:`${IMG_BASE}2.png`,kw:['매력','표현','창조','적극성'],love:'당신의 매력이 빛나는 시기입니다. 마음을 표현하세요. 행동으로 보여주는 사랑이 관계를 발전시킵니다.',reversed_love:'상대방을 조종하거나 진실하지 못한 접근을 경계하세요.'},
+  {id:2,numeral:'II',name:'High Priestess',ko:'여사제',img:`${IMG_BASE}3.png`,kw:['직관','신비','인내','내면'],love:'서두르지 마세요. 직관을 믿고 기다리세요. 겉으로 드러나지 않은 깊은 감정이 있습니다.',reversed_love:'숨겨진 감정이나 비밀이 관계에 영향을 주고 있을 수 있습니다.'},
+  {id:3,numeral:'III',name:'The Empress',ko:'여제',img:`${IMG_BASE}4.png`,kw:['풍요','사랑','온기','아름다움'],love:'사랑이 꽃피는 시기입니다. 관계가 풍요롭고 따뜻하게 성장합니다. 자신을 먼저 사랑하면 더 좋은 사랑이 옵니다.',reversed_love:'자기 자신을 소홀히 하거나 의존적인 관계 패턴을 주의하세요.'},
+  {id:4,numeral:'IV',name:'The Emperor',ko:'황제',img:`${IMG_BASE}5.png`,kw:['안정','보호','신뢰','책임'],love:'안정적이고 든든한 사랑을 나타냅니다. 상대방이 믿음직스럽거나, 관계에 안정이 필요한 시기입니다.',reversed_love:'지나친 통제나 고집이 관계를 경직시킬 수 있습니다.'},
+  {id:5,numeral:'V',name:'The Hierophant',ko:'교황',img:`${IMG_BASE}6.png`,kw:['헌신','전통','약속','진지함'],love:'진지하고 헌신적인 관계를 암시합니다. 사회적으로 인정받는 관계로 발전할 가능성이 있습니다.',reversed_love:'관습에서 벗어난 새로운 관계 방식이 필요할 수 있습니다.'},
+  {id:6,numeral:'VI',name:'The Lovers',ko:'연인',img:`${IMG_BASE}7.png`,kw:['사랑','선택','조화','깊은 유대'],love:'강렬한 끌림과 깊은 감정적 연결을 의미합니다. 중요한 선택의 시기이며, 진정한 사랑의 에너지가 흐릅니다.',reversed_love:'관계에서 불균형이나 가치관 충돌이 있을 수 있습니다. 솔직한 대화가 필요합니다.'},
+  {id:7,numeral:'VII',name:'The Chariot',ko:'전차',img:`${IMG_BASE}8.png`,kw:['용기','전진','의지','성취'],love:'원하는 사랑을 향해 적극적으로 나아가세요. 감정을 잘 다스리며 관계를 이끌어 나갈 수 있습니다.',reversed_love:'감정 기복이나 공격적인 태도가 관계를 방해할 수 있습니다.'},
+  {id:8,numeral:'VIII',name:'Strength',ko:'힘',img:`${IMG_BASE}9.png`,kw:['인내','용기','온화함','내면의 힘'],love:'부드러움과 강인함으로 상대의 마음을 사로잡습니다. 인내와 이해로 관계를 지속하면 아름다운 결실이 있습니다.',reversed_love:'자기 의심이나 두려움이 사랑을 가로막고 있을 수 있습니다.'},
+  {id:9,numeral:'IX',name:'The Hermit',ko:'은둔자',img:`${IMG_BASE}10.png`,kw:['성찰','지혜','홀로서기','내면 탐구'],love:'지금은 혼자만의 시간이 필요한 시기입니다. 자신을 더 잘 알게 될수록 더 건강한 사랑이 찾아옵니다.',reversed_love:'외로움이나 고립을 두려워하며 잘못된 관계에 매달리고 있지 않은지 살펴보세요.'},
+  {id:10,numeral:'X',name:'Wheel of Fortune',ko:'운명의 바퀴',img:`${IMG_BASE}11.png`,kw:['운명','전환','행운','변화'],love:'사랑의 운명적 전환점이 찾아옵니다. 예상치 못한 만남이나 관계의 새로운 국면이 시작될 수 있습니다.',reversed_love:'변화에 저항하면 관계가 정체될 수 있습니다. 흐름을 받아들이세요.'},
+  {id:11,numeral:'XI',name:'Justice',ko:'정의',img:`${IMG_BASE}12.png`,kw:['균형','공정','진실','인과'],love:'관계에서 균형과 공정이 중요합니다. 상대방에게 진솔하게 대하면 그만큼 돌아옵니다.',reversed_love:'한쪽이 더 많이 노력하고 있는 불균형한 관계를 점검해보세요.'},
+  {id:12,numeral:'XII',name:'The Hanged Man',ko:'매달린 남자',img:`${IMG_BASE}13.png`,kw:['기다림','희생','관점 전환','인내'],love:'사랑을 위해 기다림이 필요한 시기입니다. 관점을 바꾸면 상대방이 다르게 보일 수 있습니다.',reversed_love:'의미 없는 기다림은 그만하세요. 결단이 필요한 때입니다.'},
+  {id:13,numeral:'XIII',name:'Death',ko:'변환',img:`${IMG_BASE}14.png`,kw:['변화','끝과 시작','변환','새로움'],love:'하나의 관계 국면이 끝나고 새로운 시작이 옵니다. 과거를 내려놓아야 더 좋은 사랑이 들어올 공간이 생깁니다.',reversed_love:'변화를 두려워하며 끝난 관계에 매달리고 있을 수 있습니다.'},
+  {id:14,numeral:'XIV',name:'Temperance',ko:'절제',img:`${IMG_BASE}15.png`,kw:['조화','균형','인내','중용'],love:'서두르지 말고 천천히 쌓아가는 사랑입니다. 감정의 균형을 맞추며 조화로운 관계를 만들어 가세요.',reversed_love:'극단적인 감정 기복이나 과한 집착이 관계에 영향을 줄 수 있습니다.'},
+  {id:15,numeral:'XV',name:'The Devil',ko:'악마',img:`${IMG_BASE}16.png`,kw:['집착','열정','속박','그림자'],love:'강렬한 욕망과 끌림이 있습니다. 하지만 집착과 사랑의 차이를 구분하세요. 건강한 경계선이 필요합니다.',reversed_love:'독성 관계에서 벗어나거나, 집착을 내려놓을 때가 되었습니다.'},
+  {id:16,numeral:'XVI',name:'The Tower',ko:'탑',img:`${IMG_BASE}17.png`,kw:['충격','변화','해방','진실'],love:'관계에서 예상치 못한 변화가 있을 수 있습니다. 충격적이지만 진실이 드러나고 더 나은 사랑으로 나아가는 계기가 됩니다.',reversed_love:'재앙적 상황을 피하고 싶다면 지금 당장 솔직한 대화를 시작하세요.'},
+  {id:17,numeral:'XVII',name:'The Star',ko:'별',img:`${IMG_BASE}18.png`,kw:['희망','치유','영감','믿음'],love:'사랑에 대한 희망과 믿음을 가지세요. 상처가 치유되고 아름다운 사랑이 찾아오는 시기입니다.',reversed_love:'사랑에 대한 희망을 잃지 마세요. 지금의 실망이 전부가 아닙니다.'},
+  {id:18,numeral:'XVIII',name:'The Moon',ko:'달',img:`${IMG_BASE}19.png`,kw:['감성','직관','환상','무의식'],love:'감정이 복잡하고 혼란스러운 시기입니다. 직관을 믿되, 현실과 환상을 구분하세요. 솔직한 감정 표현이 중요합니다.',reversed_love:'혼란이 해소되고 진실이 드러납니다. 감추었던 감정을 드러낼 시간입니다.'},
+  {id:19,numeral:'XIX',name:'The Sun',ko:'태양',img:`${IMG_BASE}20.png`,kw:['기쁨','행복','활력','성공'],love:'밝고 따뜻한 행복한 사랑을 나타냅니다. 자신감을 갖고 사랑을 즐기세요. 긍정적인 에너지가 관계를 빛냅니다.',reversed_love:'일시적인 우울감이 있더라도 곧 밝아질 것입니다. 자신을 너무 몰아붙이지 마세요.'},
+  {id:20,numeral:'XX',name:'Judgement',ko:'심판',img:`${IMG_BASE}21.png`,kw:['각성','소명','결단','재생'],love:'중요한 결단의 시기입니다. 과거의 관계 패턴을 돌아보고 새롭게 깨어나세요. 진정한 사랑을 향한 각성이 찾아옵니다.',reversed_love:'자기 비판과 후회가 새로운 사랑을 가로막고 있습니다. 용서와 수용이 필요합니다.'},
+  {id:21,numeral:'XXI',name:'The World',ko:'세계',img:`${IMG_BASE}22.png`,kw:['완성','성취','전체','조화'],love:'사랑이 완성되는 아름다운 결실의 시기입니다. 원하는 사랑을 이루거나 관계가 새로운 단계로 도약합니다.',reversed_love:'아직 완성에 이르지 못했지만 인내하면 반드시 도달합니다.'},
 ];
 
-const POS_LABELS = {
-  1: ['오늘의 메시지'],
-  3: ['과거', '현재', '미래'],
-  5: ['현재 상황', '장애물', '지나온 감정', '다가올 방향', '핵심 에너지']
-};
-const POS_MEANING = {
-  '과거':'지나온 사랑의 흐름이 현재에 미친 영향입니다.',
-  '현재':'지금 이 순간 당신의 연애 에너지를 나타냅니다.',
-  '미래':'현재 흐름이 이어진다면 다가올 가능성입니다.',
-  '오늘의 메시지':'오늘 당신의 연애에 필요한 가장 중요한 메시지입니다.',
-  '현재 상황':'지금 사랑에서 핵심적으로 작용하는 에너지입니다.',
-  '장애물':'사랑 앞에 놓인 도전 또는 내면의 두려움입니다.',
-  '지나온 감정':'과거의 감정이 현재 관계에 미치는 영향입니다.',
-  '다가올 방향':'앞으로 사랑이 흘러갈 가능성 있는 방향입니다.',
-  '핵심 에너지':'이 리딩 전체를 아우르는 근본적 사랑의 에너지입니다.',
+const POS_LABELS={1:['오늘의 메시지'],3:['과거','현재','미래'],5:['현재 상황','장애물','지나온 감정','다가올 방향','핵심 에너지']};
+const OVERALL_MSG={
+  '현재 연애운':['지금 당신의 연애 에너지는 변화와 성장을 향하고 있습니다. 자신을 믿고 앞으로 나아가세요.','당신은 혼자여도 충분히 완전합니다. 그 충만함에서 아름다운 사랑이 시작됩니다.','사랑은 억지로 만드는 것이 아닙니다. 당신 자신을 사랑할 때 좋은 인연이 찾아옵니다.'],
+  '새로운 인연':['새로운 만남의 에너지가 흐릅니다. 마음을 열고 일상 속 작은 인연에 귀 기울이세요.','인연은 예상치 못한 순간에 찾아옵니다. 지금 당신이 있는 그 자리에 답이 있을 수 있습니다.','자신을 있는 그대로 보여줄 때 진정한 인연이 다가옵니다.'],
+  '현재 관계':['두 사람의 에너지가 하나로 흐를 때 관계는 깊어집니다. 솔직한 표현이 관계를 꽃피웁니다.','완벽한 관계는 없습니다. 서로의 다름을 인정하는 것이 더 깊은 사랑으로 가는 길입니다.','사랑받고 싶다면 먼저 사랑을 주세요. 당신의 따뜻한 마음이 상대의 마음을 녹입니다.'],
+  '이별과 재회':['끝이 있어야 새 시작이 있습니다. 지금의 아픔은 더 아름다운 사랑을 위한 준비 과정입니다.','상처가 완전히 치유될 때까지 충분한 시간을 스스로에게 주세요. 서두르지 마세요.','재회를 원한다면, 먼저 자신이 달라져야 관계도 달라질 수 있습니다.'],
 };
 
-const OVERALL_MSG = {
-  '현재 연애운': [
-    '지금 당신의 연애 에너지는 변화와 성장을 향하고 있습니다. 자신을 믿고 앞으로 나아가세요.',
-    '당신은 혼자여도 충분히 완전합니다. 그 충만함에서 아름다운 사랑이 시작됩니다.',
-    '사랑은 억지로 만드는 것이 아닙니다. 당신 자신을 사랑할 때 좋은 인연이 찾아옵니다.',
-  ],
-  '새로운 인연': [
-    '새로운 만남의 에너지가 흐릅니다. 마음을 열고 일상 속 작은 인연에 귀 기울이세요.',
-    '인연은 예상치 못한 순간에 찾아옵니다. 지금 당신이 있는 그 자리에 답이 있을 수 있습니다.',
-    '자신을 있는 그대로 보여줄 때 진정한 인연이 다가옵니다.',
-  ],
-  '현재 관계': [
-    '두 사람의 에너지가 하나로 흐를 때 관계는 깊어집니다. 솔직한 표현이 관계를 꽃피웁니다.',
-    '완벽한 관계는 없습니다. 서로의 다름을 인정하는 것이 더 깊은 사랑으로 가는 길입니다.',
-    '사랑받고 싶다면 먼저 사랑을 주세요. 당신의 따뜻한 마음이 상대의 마음을 녹입니다.',
-  ],
-  '이별과 재회': [
-    '끝이 있어야 새 시작이 있습니다. 지금의 아픔은 더 아름다운 사랑을 위한 준비 과정입니다.',
-    '상처가 완전히 치유될 때까지 충분한 시간을 스스로에게 주세요. 서두르지 마세요.',
-    '재회를 원한다면, 먼저 자신이 달라져야 관계도 달라질 수 있습니다.',
-  ],
-};
+let selectedCat='현재 연애운',selectedN=1,shuffleCount=0,drawn=[];
 
-let selectedCat = '현재 연애운';
-let selectedN = 1;
-let shuffleCount = 0;
-let drawn = [];
-
-// Category buttons
-document.querySelectorAll('.category-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    selectedCat = btn.dataset.cat;
+document.querySelectorAll('.category-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');selectedCat=btn.dataset.cat;
   });
 });
-
-// Spread pills
-document.querySelectorAll('.spread-pill').forEach(pill => {
-  pill.addEventListener('click', () => {
-    document.querySelectorAll('.spread-pill').forEach(p => p.classList.remove('active'));
-    pill.classList.add('active');
-    selectedN = parseInt(pill.dataset.n);
+document.querySelectorAll('.spread-pill').forEach(pill=>{
+  pill.addEventListener('click',()=>{
+    document.querySelectorAll('.spread-pill').forEach(p=>p.classList.remove('active'));
+    pill.classList.add('active');selectedN=parseInt(pill.dataset.n);
   });
 });
-
-document.getElementById('btn-start').addEventListener('click', () => {
-  shuffleCount = 0;
-  ['d1','d2','d3'].forEach(id => document.getElementById(id).classList.remove('done'));
-  document.getElementById('btn-reveal').style.display = 'none';
+document.getElementById('btn-start').addEventListener('click',()=>{
+  shuffleCount=0;
+  ['d1','d2','d3'].forEach(id=>document.getElementById(id).classList.remove('done'));
+  document.getElementById('btn-reveal').style.display='none';
   goTo('shuffle');
 });
-
-document.getElementById('deck-wrap').addEventListener('click', () => {
-  if (shuffleCount >= 3) return;
-  const wrap = document.getElementById('deck-wrap');
+document.getElementById('deck-wrap').addEventListener('click',()=>{
+  if(shuffleCount>=3)return;
+  const wrap=document.getElementById('deck-wrap');
   wrap.classList.add('shuffling');
-  setTimeout(() => wrap.classList.remove('shuffling'), 550);
+  setTimeout(()=>wrap.classList.remove('shuffling'),550);
   shuffleCount++;
   document.getElementById('d'+shuffleCount).classList.add('done');
-  if (shuffleCount >= 3) {
-    setTimeout(() => { document.getElementById('btn-reveal').style.display = 'inline-block'; }, 650);
-  }
+  if(shuffleCount>=3){setTimeout(()=>{document.getElementById('btn-reveal').style.display='inline-block';},650);}
 });
+document.getElementById('btn-reveal').addEventListener('click',doReading);
+document.getElementById('btn-new').addEventListener('click',()=>goTo('welcome'));
 
-document.getElementById('btn-reveal').addEventListener('click', doReading);
-document.getElementById('btn-new').addEventListener('click', () => goTo('welcome'));
-
-function goTo(s) {
-  document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+function goTo(s){
+  document.querySelectorAll('.screen').forEach(el=>el.classList.remove('active'));
   document.getElementById('screen-'+s).classList.add('active');
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
 
-function doReading() {
-  const n = selectedN;
-  const shuffled = [...CARDS].sort(() => Math.random() - .5);
-  drawn = shuffled.slice(0, n).map(c => ({ ...c, reversed: Math.random() < .28 }));
-  const labels = POS_LABELS[n];
-
-  document.getElementById('reading-cat-label').textContent = selectedCat + ' 타로 리딩';
-  const area = document.getElementById('cards-area');
-  area.innerHTML = '';
+function doReading(){
+  const n=selectedN;
+  const shuffled=[...CARDS].sort(()=>Math.random()-.5);
+  drawn=shuffled.slice(0,n).map(c=>({...c,reversed:Math.random()<.28}));
+  const labels=POS_LABELS[n];
+  document.getElementById('reading-cat-label').textContent=selectedCat+' 타로 리딩';
+  const area=document.getElementById('cards-area');
+  area.innerHTML='';
   document.getElementById('interp-box').classList.remove('show');
-  document.getElementById('interp-cards-list').innerHTML = '';
+  document.getElementById('interp-cards-list').innerHTML='';
 
-  drawn.forEach((card, i) => {
-    const slot = document.createElement('div');
-    slot.className = 'card-slot';
-
-    const posEl = document.createElement('div');
-    posEl.className = 'pos-label';
-    posEl.textContent = labels[i];
-
-    const tc = document.createElement('div');
-    tc.className = 'tarot-card' + (card.reversed ? ' card-reversed' : '');
-    tc.innerHTML = `
+  drawn.forEach((card,i)=>{
+    const slot=document.createElement('div');
+    slot.className='card-slot';
+    const posEl=document.createElement('div');
+    posEl.className='pos-label';
+    posEl.textContent=labels[i];
+    const tc=document.createElement('div');
+    tc.className='tarot-card'+(card.reversed?' card-reversed':'');
+    tc.innerHTML=`
       <div class="card-inner">
         <div class="c-back">
           <div class="c-back-inner">
@@ -703,63 +323,53 @@ function doReading() {
           </div>
         </div>
         <div class="c-front">
-          <div class="c-art" style="padding:0;overflow:hidden;">
-            <img src="${card.img}" alt="${card.ko}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+          <div class="c-art">
+            <img src="${card.img}" alt="${card.ko}" loading="lazy"/>
           </div>
           <div class="c-plate">
             <span class="c-name">${card.numeral}. ${card.name}</span>
             <span class="c-ko">${card.ko}</span>
           </div>
-          <div class="c-reversed-tag">역방향</div>
+          ${card.reversed?'<div class="c-reversed-tag">역방향</div>':''}
         </div>
       </div>`;
-
-    tc.addEventListener('click', () => {
-      tc.classList.add('flipped');
-    });
-
+    tc.addEventListener('click',()=>tc.classList.add('flipped'));
     slot.appendChild(posEl);
     slot.appendChild(tc);
     area.appendChild(slot);
   });
 
   goTo('reading');
-
-  // Auto flip
-  setTimeout(() => {
-    document.querySelectorAll('.tarot-card').forEach((el, i) => {
-      setTimeout(() => el.classList.add('flipped'), i * 350);
+  setTimeout(()=>{
+    document.querySelectorAll('.tarot-card').forEach((el,i)=>{
+      setTimeout(()=>el.classList.add('flipped'),i*350);
     });
-  }, 700);
+  },700);
 
-  // Build interpretation
-  setTimeout(() => {
-    const list = document.getElementById('interp-cards-list');
-    drawn.forEach((card, i) => {
-      const pos = labels[i];
-      const loveText = card.reversed ? card.reversed_love : card.love;
-      const div = document.createElement('div');
-      div.className = 'interp-card';
-      div.innerHTML = `
+  setTimeout(()=>{
+    const list=document.getElementById('interp-cards-list');
+    drawn.forEach((card,i)=>{
+      const pos=labels[i];
+      const loveText=card.reversed?card.reversed_love:card.love;
+      const div=document.createElement('div');
+      div.className='interp-card';
+      div.innerHTML=`
         <div class="interp-card-header">
           <span class="interp-pos-badge">${pos}</span>
-          <span class="interp-card-name">${card.emoji} ${card.ko} (${card.name})${card.reversed?' — 역방향':''}</span>
+          <span class="interp-card-name">${card.numeral}. ${card.ko} (${card.name})${card.reversed?' — 역방향':''}</span>
         </div>
         <div class="interp-text">${loveText}</div>
         <div class="keywords-row">${card.kw.map(k=>`<span class="keyword-tag">${k}</span>`).join('')}</div>
       `;
       list.appendChild(div);
     });
-
-    // Overall message
-    const msgs = OVERALL_MSG[selectedCat] || OVERALL_MSG['현재 연애운'];
-    const msg = msgs[Math.floor(Math.random() * msgs.length)];
-    document.getElementById('overall-msg').innerHTML = `<p>💌 ${msg}</p>`;
-
-    const box = document.getElementById('interp-box');
+    const msgs=OVERALL_MSG[selectedCat]||OVERALL_MSG['현재 연애운'];
+    const msg=msgs[Math.floor(Math.random()*msgs.length)];
+    document.getElementById('overall-msg').innerHTML=`<p>💌 ${msg}</p>`;
+    const box=document.getElementById('interp-box');
     box.classList.add('show');
-    setTimeout(() => box.scrollIntoView({ behavior:'smooth', block:'nearest' }), 200);
-  }, drawn.length * 350 + 1200);
+    setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'nearest'}),200);
+  },drawn.length*350+1200);
 }
 </script>
 </body>
